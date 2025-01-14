@@ -554,7 +554,62 @@ video {
   display: none;
 }
 
+.bg-red-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity, 1));
+}
+
+
+
+.bg-\[url\] {
+  background-color: url;
+}
+
+.bg-\[url\(\'\/img\/hero-pattern\.svg\'\)\] {
+  background-image: url('/img/hero-pattern.svg');
+}
+
+
+
+
+.text-\[40px\] {
+  font-size: 40px;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
 .text-\[red\] {
   --tw-text-opacity: 1;
   color: rgb(255 0 0 / var(--tw-text-opacity, 1));
+}
+
+
+
+.text-\[40\] {
+  color: 40;
+}
+
+@media (orientation: landscape) {
+  .landscape\:flex {
+    display: flex;
+  }
+
+  .landscape\:flex-col {
+    flex-direction: column;
+  }
+
+  .landscape\:items-center {
+    align-items: center;
+  }
+
+  .landscape\:justify-center {
+    justify-content: center;
+  }
+
+  .landscape\:bg-blue-700 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1));
+  }
 }
