@@ -19,16 +19,19 @@
   
   <script>
   import { personajes } from '@/db/datos.js';
+  import { useToast } from "vue-toastification";
   export default {
       name: 'VistaPersonajes',
+      setup() {
+        const toast = useToast();
+        return { toast }
+      },
       data(){
         return {
             personas: '',
             p1: '',
             p2: '',
             destino: ''
-
-            
         }
       },
       methods: {
@@ -48,10 +51,12 @@
                 localStorage.setItem('p1', JSON.stringify(this.p1))
                 localStorage.setItem('p2', JSON.stringify(this.p2))
                 this.destino = '/escenarios'
+                this.toast.success(`Jugador 1 ha seleccionado a ${JSON.stringify(this.p1.nombre)}`);
+                this.toast.success(`Jugador 2 ha seleccionado a ${JSON.stringify(this.p2.nombre)}`)
             }
-            
-            
-
+            else{
+                this.toast.error("Debes seleccionar 2 personajes");
+            }
         }
       },
     

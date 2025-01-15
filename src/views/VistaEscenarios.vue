@@ -17,8 +17,13 @@
   
   <script>
   import { escenarios } from '@/db/datos.js';
+  import { useToast } from "vue-toastification";
   export default {
       name: 'VistaEscenarios',
+      setup() {
+        const toast = useToast();
+        return { toast }
+      },
       data(){
         return {
             escenarios: '',
@@ -39,8 +44,11 @@
             this.e1 = this.escenarios.find(e => e.nombre === this.e1)
             if (this.e1 != undefined) {
                 localStorage.setItem('escenario', JSON.stringify(this.e1))
-                
                 this.destino = '/combate'
+                this.toast.success(`El escenario de pelea será ${JSON.stringify(this.e1.nombre)}`);
+            }
+            else{
+                this.toast.error("Debes seleccionar un escenario en el que luchar");
             }
             
         }
