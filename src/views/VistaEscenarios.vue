@@ -4,13 +4,13 @@
         <p class="text-[white] text-[16px] w-[50%] text-center">El mejor juego de lucha entre alumnos. Selecciona los alumnos que van a darse de hostias</p>
         <div class="flex flex-row gap-[50px]">
             <select class="w-[300px] h-[75px] rounded-[7px] text-[24px] font-bold p-[10px]" v-model="e1">
-                <option value="">Elige un Escenario</option>
+                <option disabled value="">Elige un Escenario</option>
                 <option v-for="(escenario, index) in escenarios" :key="index" :value="escenario.nombre">{{ escenario.nombre }}</option>
             </select>
         </div>
         <div class="flex flex-row gap-[50px]">
             <router-link to="/"><button class="bg-[#b91111] h-[75px] w-[250px] rounded-[7px] font-bold text-[24px] text-[white]">Volver</button></router-link>
-            <router-link to="/combate"><button class="bg-[#7311b9] h-[75px] w-[250px] rounded-[7px] font-bold text-[24px] text-[white]" @click="guardarEscenario">Continuar</button></router-link>
+            <router-link :to="this.destino"><button class="bg-[#7311b9] h-[75px] w-[250px] rounded-[7px] font-bold text-[24px] text-[white]" @click="guardarEscenario">Continuar</button></router-link>
         </div>
     </section>
   </template>
@@ -23,6 +23,7 @@
         return {
             escenarios: '',
             e1: '',
+            destino: ''
             
         }
       },
@@ -36,12 +37,17 @@
         },
         guardarEscenario(){
             this.e1 = this.escenarios.find(e => e.nombre === this.e1)
-
-            localStorage.setItem('escenario', JSON.stringify(this.e1))
+            if (this.e1 != undefined) {
+                localStorage.setItem('escenario', JSON.stringify(this.e1))
+                
+                this.destino = '/combate'
+            }
+            
         }
       },
       mounted(){
         this.getLocalStorageEscenarios()
+        this.escenarios=this.escenarios.sort((a,b) => a.nombre.localeCompare(b.nombre))
       }
   }
   </script>
