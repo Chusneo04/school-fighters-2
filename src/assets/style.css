@@ -554,23 +554,101 @@ video {
   display: none;
 }
 
-.bg-red-700 {
+.flex {
+  display: flex;
+}
+
+.h-\[40px\] {
+  height: 40px;
+}
+
+.h-\[75px\] {
+  height: 75px;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.w-\[100px\] {
+  width: 100px;
+}
+
+.w-\[250px\] {
+  width: 250px;
+}
+
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-\[50\%\] {
+  width: 50%;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.gap-\[20px\] {
+  gap: 20px;
+}
+
+.gap-\[50px\] {
+  gap: 50px;
+}
+
+.rounded-\[7px\] {
+  border-radius: 7px;
+}
+
+.bg-\[\#1e8fde\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(185 28 28 / var(--tw-bg-opacity, 1));
+  background-color: rgb(30 143 222 / var(--tw-bg-opacity, 1));
 }
 
-
-
-.bg-\[url\] {
-  background-color: url;
+.bg-\[\#3dbc1e\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(61 188 30 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[url\(\'\/img\/hero-pattern\.svg\'\)\] {
-  background-image: url('/img/hero-pattern.svg');
+.bg-\[\#7311b9\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(115 17 185 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#b91111\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 17 17 / var(--tw-bg-opacity, 1));
+}
 
+.bg-cover {
+  background-size: cover;
+}
 
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.p-\[10px\] {
+  padding: 10px;
+}
+
+.p-\[20px\] {
+  padding: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-\[16px\] {
+  font-size: 16px;
+}
+
+.text-\[24px\] {
+  font-size: 24px;
+}
 
 .text-\[40px\] {
   font-size: 40px;
@@ -585,10 +663,9 @@ video {
   color: rgb(255 0 0 / var(--tw-text-opacity, 1));
 }
 
-
-
-.text-\[40\] {
-  color: 40;
+.text-\[white\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 @media (orientation: landscape) {
@@ -608,8 +685,11 @@ video {
     justify-content: center;
   }
 
-  .landscape\:bg-blue-700 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1));
+  .landscape\:bg-\[url\(\'\/src\/assets\/img\/fondo\.jpg\'\)\] {
+    background-image: url('/src/assets/img/fondo.jpg');
+  }
+
+  .landscape\:bg-\[url\(\'\/src\/assets\/img\/santiago-bernabeu-1\.jpg\'\)\] {
+    background-image: url('/src/assets/img/santiago-bernabeu-1.jpg');
   }
 }
