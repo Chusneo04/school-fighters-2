@@ -34,6 +34,19 @@
             destino: ''
         }
       },
+      watch: {
+        p1(nuevoValor) {
+            if (nuevoValor && nuevoValor.length > 3) {                
+                this.toast.success(`Has seleccionado a ${nuevoValor} como jugador 1.`);
+            }
+            
+        },
+        p2(nuevoValor) {
+            if (nuevoValor && nuevoValor.length > 3) {
+                this.toast.success(`Has seleccionado a ${nuevoValor} como jugador 2.`);
+            }
+        }
+      },
       methods: {
         getLocalStoragePersonajes(){
             this.personas=JSON.parse(localStorage.getItem('personajes'))
@@ -51,11 +64,9 @@
                 localStorage.setItem('p1', JSON.stringify(this.p1))
                 localStorage.setItem('p2', JSON.stringify(this.p2))
                 this.destino = '/escenarios'
-                this.toast.success(`Jugador 1 ha seleccionado a ${JSON.stringify(this.p1.nombre)}`);
-                this.toast.success(`Jugador 2 ha seleccionado a ${JSON.stringify(this.p2.nombre)}`)
             }
             else{
-                this.toast.error("Debes seleccionar 2 personajes");
+                this.toast.error('Deben seleccionar los 2 jugadores un personaje')
             }
         }
       },

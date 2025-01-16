@@ -32,6 +32,14 @@
             
         }
       },
+      watch: {
+        e1(nuevoValor) {
+            if (nuevoValor && nuevoValor.length > 3) {                
+                this.toast.success(`El escenario de pelea será ${nuevoValor}`);
+            }
+            
+        }
+      },
       methods: {
         getLocalStorageEscenarios(){
             this.escenarios=JSON.parse(localStorage.getItem('escenarios'))
@@ -45,13 +53,12 @@
             if (this.e1 != undefined) {
                 localStorage.setItem('escenario', JSON.stringify(this.e1))
                 this.destino = '/combate'
-                this.toast.success(`El escenario de pelea será ${JSON.stringify(this.e1.nombre)}`);
             }
             else{
-                this.toast.error("Debes seleccionar un escenario en el que luchar");
+                this.toast.error('Debes seleccionar escenario de pelea')
             }
-            
         }
+
       },
       mounted(){
         this.getLocalStorageEscenarios()
